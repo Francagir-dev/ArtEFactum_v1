@@ -26,6 +26,14 @@ bool lastState2 = HIGH;
 
 const unsigned long longPressTime = 700;  // 700 ms → pulsación larga
 
+//Functions
+void SumarTeam1(int);
+void SumarTeam2(int);
+void RestarTeam1(int);
+void RestarTeam2(int);
+void ControlTeam1();
+void ControlTeam2();
+void WritePoints(int, int);
 
 void setup()
 {
@@ -48,12 +56,9 @@ void setup()
 void loop()
 {
  ControlTeam1();
- ControlTeam2(); 
-
-
-
- 
+ ControlTeam2();  
 }
+
 void SumarTeam1(int pts){
   pointTeam1+=pts;
   WritePoints(pointTeam1, pointTeam2);
