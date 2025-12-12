@@ -49,7 +49,7 @@ void setup()
   lcd.setCursor(0, 1);
   lcd.print("el partido!");
   delay(2000);
-  lcd.clear();  //ACORDAROS DE ESTA LINEA PARA LIMPIAR LA PANTALLA ANTES DE AÑADIR MÁS COSAS O NUEVAS
+  lcd.clear();  //ACORDAROS DE ESTA LINEA, SIRVE PARA LIMPIAR LA PANTALLA ANTES DE AÑADIR MÁS COSAS O NUEVAS
    WritePoints(pointTeam1, pointTeam2);
 }
 
@@ -134,7 +134,9 @@ void ControlTeam2(){
 	
 }
 void WritePoints(int pts1, int pts2){
-  lcd.setCursor(0, 0); //X de 0 a
+ /* ESTO MUEVE EL CURSOR (CURSOR DONDE SE VA A ESCRIBIR)
+	A X => HORIZONTAL de 0 a 15 (0 EL PRIMER CUADRADO, 15 EL ÚLTIMO CUADRADITO) Y => VERTTICAL 0 O 1*/
+  lcd.setCursor(0, 0);
   lcd.print("EQUIP1 | EQUIP2");
   lcd.setCursor(2, 1); 
   lcd.print(String(pointTeam1)); //Hay que añadir el string(variable) para que imprima (Por casteo de variable). 
