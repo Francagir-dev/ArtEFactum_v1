@@ -10,8 +10,8 @@ const int ledTeam2 =4;
 	//Buzzer
 const int buzzer=5; 
 	//Pulsadores
-const int Team1=6; 
-const int Team2=7; 
+const int Team1=0; 
+const int Team2=0; 
 
 //variables
 int pointTeam1=3;
@@ -107,8 +107,8 @@ void RestarTeam1(){
 
 }
 
-void SumarTeam2(){
-  pointTeam2++;
+void SumarTeam2(int pts){
+  pointTeam2+=pts;
   WritePoints(pointTeam1, pointTeam2);
   tone(buzzer, 800, 80);
 }
@@ -122,5 +122,5 @@ void WritePoints(int pts1, int pts2){
   lcd.setCursor(0, 0); 
   lcd.print("PARTIDO");
   lcd.setCursor(0, 1);
-  lcd.print("Eq1: "+String(pts1)+ "  "+ "Eq2:"+String(pts2)); //Hay que añadir el string(variable) para que imprima
+  lcd.print("Eq1: "+String(pts1)+ "  "+ "Eq2: "+String(pts2)); //Hay que añadir el string(variable) para que imprima
 } 
