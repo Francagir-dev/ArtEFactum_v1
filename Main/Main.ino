@@ -42,6 +42,7 @@ void setup()
   pinMode(Team2, INPUT_PULLUP);
   pinMode(buzzer, OUTPUT); 
   
+  lcd.init();
   lcd.begin(16, 2);    
   lcd.backlight();
   lcd.setCursor(0, 0); 
@@ -136,10 +137,10 @@ void ControlTeam2(){
 void WritePoints(int pts1, int pts2){
  /* ESTO MUEVE EL CURSOR (CURSOR DONDE SE VA A ESCRIBIR)
 	A X => HORIZONTAL de 0 a 15 (0 EL PRIMER CUADRADO, 15 EL ÚLTIMO CUADRADITO) Y => VERTTICAL 0 O 1*/
-  lcd.setCursor(0, 0);
+  lcd.setCursor(0, 0); 
   lcd.print("EQUIP1 | EQUIP2");
-  lcd.setCursor(2, 1); 
-  lcd.print(String(pointTeam1)); //Hay que añadir el string(variable) para que imprima (Por casteo de variable). 
+  lcd.setCursor(2, 1);
+  lcd.print(String(pointTeam1)); //Hay que añadir el string(variable) para que imprima
   lcd.setCursor(7, 1);
   lcd.print("|");
   lcd.setCursor(11, 1);
