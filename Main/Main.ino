@@ -42,7 +42,7 @@ void setup()
   pinMode(Team2, INPUT_PULLUP);
   pinMode(buzzer, OUTPUT); 
   
-  lcd.init();   
+  lcd.begin(16, 2);    
   lcd.backlight();
   lcd.setCursor(0, 0); 
   lcd.print("Empieza");
@@ -50,7 +50,7 @@ void setup()
   lcd.print("el partido!");
   delay(2000);
   lcd.clear();  //ACORDAROS DE ESTA LINEA, SIRVE PARA LIMPIAR LA PANTALLA ANTES DE AÑADIR MÁS COSAS O NUEVAS
-   WritePoints(pointTeam1, pointTeam2);
+  WritePoints(pointTeam1, pointTeam2);
 }
 
 void loop()
@@ -66,7 +66,7 @@ void SumarTeam1(int pts){
 }
 
 void RestarTeam1(int pts){
-  if (pointTeam1 > 0) pointTeam1-=pts;
+  if (pointTeam1 >= 1) pointTeam1-=pts;
   WritePoints(pointTeam1, pointTeam2);
 }
 
@@ -77,7 +77,7 @@ void SumarTeam2(int pts){
 }
 
 void RestarTeam2(int pts){
-  if (pointTeam2 > 0) pointTeam2-=pts;
+  if (pointTeam2 >= 1) pointTeam2-=pts;
   WritePoints(pointTeam1, pointTeam2);
  
 }
