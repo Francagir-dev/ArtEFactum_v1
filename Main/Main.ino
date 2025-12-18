@@ -2,20 +2,20 @@
 
 //Configuración componentes
 	//LCD
-LiquidCrystal_I2C lcd(0x20,16,2); //16 letras, 2 filas 
+LiquidCrystal_I2C lcd(0x27,16,2); //16 letras, 2 filas 
 								 // 4 numeros 12 extra (Eq1, Eq2), "a" a mitad, etc.
 	//LEDS
-const int ledTeam1 =3;
-const int ledTeam2 =4;
+//const int ledTeam1 =3;
+//const int ledTeam2 =4;
 	//Buzzer
-const int buzzer=5; 
+const int buzzer=8; 
 	//Pulsadores
-const int Team1=0; 
-const int Team2=0; 
+const int Team1=4; 
+const int Team2=7; 
 
 //variables
-int pointTeam1=3;
-int pointTeam2=12;
+int pointTeam1=0;
+int pointTeam2=0;
 
 // --- Variables para pulsación larga/corta ---
 unsigned long pressTeam1 = 0;
@@ -24,7 +24,7 @@ unsigned long pressTeam2 = 0;
 bool lastState1 = HIGH;  
 bool lastState2 = HIGH;
 
-const unsigned long longPressTime = 700;  // 700 ms → pulsación larga
+const unsigned long longPressTime = 800;  // 700 ms → pulsación larga
 
 //Functions
 void SumarTeam1(int);
